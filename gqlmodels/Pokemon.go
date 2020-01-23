@@ -31,133 +31,49 @@ var Pokemon = graphql.NewObject(graphql.ObjectConfig{
 		"name": {
 			Type:        graphql.String,
 			Description: "The name of this Pokémon",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.Name, nil
-			},
 		},
 		"weight": {
 			Type:        PokemonDimension,
 			Description: "The minimum and maximum weight of this Pokémon",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.Weight, nil
-			},
 		},
 		"height": {
 			Type:        PokemonDimension,
 			Description: "The minimum and maximum weight of this Pokémon",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.Height, nil
-			},
 		},
 		"classification": {
 			Type:        graphql.String,
 			Description: "The classification of this Pokémon",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.Classification, nil
-			},
 		},
 		"types": {
 			Type:        graphql.NewList(graphql.String),
 			Description: "The type(s) of this Pokémon",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.Types, nil
-			},
 		},
 		"resistant": {
 			Type:        graphql.NewList(graphql.String),
 			Description: "The type(s) of Pokémons that this Pokémon is resistant to",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.Resistant, nil
-			},
 		},
 		"attacks": {
 			Type:        PokemonAttack,
 			Description: "The attacks of this Pokémon",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.Attacks, nil
-			},
 		},
 		"weaknesses": {
 			Type:        graphql.NewList(graphql.String),
 			Description: "The type(s) of Pokémons that this Pokémon weak to",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.Weaknesses, nil
-			},
 		},
 		"fleeRate": {
 			Type: graphql.Float,
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.FleeRate, nil
-			},
 		},
 		"maxCP": {
 			Type:        graphql.Int,
 			Description: "The maximum CP of this Pokémon",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.MaxCP, nil
-			},
 		},
 		"evolutionRequirements": {
 			Type:        PokemonEvolutionRequirement,
 			Description: "The evolution requirements of this Pokémon",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.EvolutionRequirements, nil
-			},
 		},
 		"maxHP": {
 			Type:        graphql.Int,
 			Description: "The maximum HP of this Pokémon",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Pokemon)
-				if !ok {
-					return nil, utils.TypeError(models.Pokemon{}, p.Source)
-				}
-				return d.MaxHP, nil
-			},
 		},
 		"image": {
 			Type:        graphql.String,

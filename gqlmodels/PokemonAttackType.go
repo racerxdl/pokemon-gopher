@@ -13,35 +13,14 @@ var AttackType = graphql.NewObject(graphql.ObjectConfig{
 		"name": {
 			Type:        graphql.String,
 			Description: "The name of this Pokémon attack",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Attack)
-				if !ok {
-					return nil, utils.TypeError(models.Attack{}, p.Source)
-				}
-				return d.Name, nil
-			},
 		},
 		"type": {
 			Type:        graphql.String,
 			Description: "The type of this Pokémon attack",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Attack)
-				if !ok {
-					return nil, utils.TypeError(models.Attack{}, p.Source)
-				}
-				return d.Type, nil
-			},
 		},
 		"damage": {
 			Type:        graphql.Int,
 			Description: "The damage of this Pokémon attack",
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				d, ok := p.Source.(models.Attack)
-				if !ok {
-					return nil, utils.TypeError(models.Attack{}, p.Source)
-				}
-				return d.Damage, nil
-			},
 		},
 	},
 })
