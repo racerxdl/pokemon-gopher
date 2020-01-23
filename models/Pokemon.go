@@ -12,7 +12,7 @@ type Pokemon struct {
 	Weight                Dimension             `json:"weight"`
 	Height                Dimension             `json:"height"`
 	FleeRate              float64               `json:"flee_rate"`
-	EvolutionRequirements EvolutionRequirements `json:"evolution_requirements"`
+	EvolutionRequirements EvolutionRequirements `json:"evolutionRequirements"`
 	Evolutions            []PokemonReference    `json:"evolutions"`
 	MaxCP                 int                   `json:"max_cp"`
 	MaxHP                 int                   `json:"max_hp"`
